@@ -1,0 +1,160 @@
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--sangria-900);
+  position: relative;
+}
+
+.login {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--sangria-100);
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+.login__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+.login__header img {
+  width: 120px;
+  height: 120px;
+  border: 50%;
+  position: absolute;
+  border-radius: 50%;
+  top: -70px;
+  border: 5px solid var(--sangria-900);
+}
+
+.login__header .login__header-title {
+  margin-top: 70px;
+  color: var(--sangria-900);
+  font-family: "Poppins";
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.login__form {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login__form .login__form-message {
+  text-align: start;
+  width: 80%;
+  font-weight: 600;
+  display: none;
+}
+
+.login__form .login__form-message.has-error {
+  color: var(--error);
+  display: block;
+}
+
+.login__form-form-group {
+  width: 80%;
+  height: 45px;
+  border: 2px solid var(--sangria-900);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__form-form-group.has-error {
+  border: 1px solid var(--error);
+}
+
+.login__form-form-group .form-group__input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: transparent;
+  padding-left: 20px;
+  color: var(--sangria-900);
+}
+
+.login__form-form-group .form-group__input::placeholder {
+  color: var(--sangria-800);
+}
+
+.login__form-form-group .form-group__input:focus {
+  outline: none;
+}
+
+.login__form-form-group span {
+  font-size: 12px;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.login__form-form-group span svg {
+  width: 25px;
+  height: 25px;
+  color: var(--sangria-900);
+}
+
+.login__form-form-group span svg.has-error {
+  color: var(--error);
+}
+
+.login__form .login__form-button {
+  width: 80%;
+  height: 45px;
+  border: none;
+  background-color: var(--sangria-900);
+  color: var(--white);
+  font-family: "Poppins";
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.login__form .login__form-button svg {
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+}
+
+.login__form .login__form-button:hover {
+  box-shadow: 0 0 10px var(--sangria-900);
+}
+
+.login__form-remember {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  width: 80%;
+  padding-block: 10px;
+}
+
+.login__form-remember label {
+  color: var(--sangria-900);
+}
+
+.login__form-remember input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+}
