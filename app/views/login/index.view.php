@@ -13,7 +13,8 @@
             </div>
             <small class="login__form-message"></small>
             <div class="login__form-form-group">
-                <input type="password" class="form-group__input" name="password" id="password" placeholder="Contraseña" />
+                <input type="password" class="form-group__input" name="password" id="password"
+                    placeholder="Contraseña" />
                 <span>
                     <?php echo icon("security-password") ?>
                 </span>
@@ -30,3 +31,4 @@
         </form>
     </div>
 </main>
+<script type="module" src="<?php echo asset("js", "login.js") ?>"></script>

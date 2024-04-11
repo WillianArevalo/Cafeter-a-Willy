@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<?php echo asset("css", "login.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "modal.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "navbar-admin.css") ?>">
+    <link rel="stylesheet" href="<?php echo asset("css", "dashboard.css") ?>">
+    <script src="<?php echo asset("js", "jquery-3.7.1.min.js") ?>"></script>
 </head>
 
 <?php
@@ -18,7 +20,7 @@ $user = (getSession("user") == null) ? "" : getSession("user");
 $rol = ($user == "") ? "usuario" : $user["rol"];
 ?>
 
-<body class="body-<?php echo $rol ?>">
+<body class="body-<?php echo $rol ?>" id="body">
     <div id="overlay">
     </div>
 
