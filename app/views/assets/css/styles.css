@@ -39,10 +39,21 @@
   --sangria-900: #8c1c13;
   --sangria-950: #4b0904;
 
-  --error: #ff1717;
+  --error: #ed2323;
   --success: #00c853;
-  --warning: #ff6f00;
-  --blue: #0650e6;
+  --warning: #f5d921;
+
+  --blue-50: #edf7ff;
+  --blue-100: #d7ecff;
+  --blue-200: #b7dfff;
+  --blue-300: #86ccff;
+  --blue-400: #4dafff;
+  --blue-500: #248cff;
+  --blue-600: #0d6bff;
+  --blue-700: #0650e6;
+  --blue-800: #0c43c1;
+  --blue-900: #113d97;
+  --blue-950: #10265b;
 }
 
 * {
@@ -52,32 +63,32 @@
 }
 
 h1 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 47.78px;
 }
 
 h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 39.81px;
 }
 
 h3 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 33.18px;
 }
 
 h4 {
-  font-family: "FjordOne", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 27.65px;
 }
 
 h5 {
-  font-family: "FjordOne", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 23.04px;
 }
 
 h6 {
-  font-family: "FjordOne", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 19.2px;
 }
 
@@ -109,4 +120,30 @@ body.body-usuario {
 
 body.body-admin {
   background-color: var(--black-950);
+}
+
+body.hidden {
+  overflow: hidden;
+  width: calc(100% - 10px);
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--black-200);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--black-800);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--black-900);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--black-900);
 }

@@ -1,0 +1,409 @@
+.main-admin {
+  margin-top: 5px;
+  margin-left: 290px;
+  margin-right: 20px;
+  background-color: transparent;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.welcome__container {
+  display: flex;
+  align-items: start;
+  position: relative;
+  border: 1px solid var(--black-900);
+  border-radius: 20px;
+}
+
+.welcome__container-text {
+  padding: 50px;
+}
+
+.welcome__container-text h1 {
+  color: var(--blue-600);
+  font-family: "Poppins";
+}
+
+.welcome__container-text p {
+  color: var(--black-500);
+}
+
+.welcome__container-links-account {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  gap: 10px;
+}
+
+.welcome__container-links-account a {
+  color: var(--black-500);
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.welcome__container-links-account a:nth-child(1),
+.welcome__container-links-account a:nth-child(2) {
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.welcome__container-links-account a:nth-child(1) svg,
+.welcome__container-links-account a:nth-child(2) svg {
+  color: var(--success);
+  width: 20px;
+  height: 20px;
+}
+
+.welcome__container-links-account a:nth-child(1):hover,
+.welcome__container-links-account a:nth-child(2):hover {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.welcome__container-links-account a:nth-child(1):hover svg,
+.welcome__container-links-account a:nth-child(2):hover svg {
+  color: var(--white);
+}
+
+.welcome__container-links-account a:nth-child(3) {
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+.welcome__container-links-account a:nth-child(3) svg {
+  color: var(--error);
+  width: 20px;
+  height: 20px;
+}
+
+.welcome__container-links-account a:nth-child(3):hover {
+  background-color: var(--error);
+  color: var(--white);
+}
+
+.welcome__container-links-account a:nth-child(3):hover svg {
+  color: var(--white);
+}
+
+.dashboard__container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.dashboard__container .dashboard-col-1,
+.dashboard__container .dashboard-col-2 {
+  width: 100%;
+}
+
+.dashboard__container .dashboard-col-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.counts {
+  display: flex;
+  gap: 20px;
+}
+
+.counts .counts__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 40px;
+  border: 1px solid var(--black-900);
+  border-radius: 20px;
+  gap: 10px;
+  max-height: 200px;
+}
+
+.counts .counts__item .counts__item-title {
+  color: var(--black-500);
+}
+
+.counts .counts__item .counts__item-number {
+  font-weight: bold;
+  color: var(--white);
+  font-size: 20px;
+  background-color: var(--blue-600);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.reminder {
+  display: flex;
+  color: var(--white);
+  flex-direction: column;
+  width: 100%;
+}
+
+.reminder__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+
+.reminder__header span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--blue-600);
+}
+
+.reminder__header svg {
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+
+.reminder__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--black-900);
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.reminder__item:nth-child(2) {
+  margin-top: 0;
+}
+
+.reminder__item .reminder__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 10px 5px;
+  border-radius: 10px;
+  background-color: var(--blue-600);
+}
+
+.reminder__item .reminder__item-icon svg {
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+
+.reminder__item .reminder__item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 10;
+}
+
+.reminder__item .reminder__item-content button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reminder__item .reminder__item-content button svg {
+  color: var(--black-200);
+  width: 20px;
+  height: 20px;
+}
+
+.reminder__item .reminder__item-content .content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reminder__item .reminder__item-content .content-text span:nth-child(1) {
+  color: var(--black-500);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.reminder__item .reminder__item-content .content-text span:nth-child(2) {
+  color: var(--black-500);
+  font-size: 14px;
+}
+
+.reminder__item .reminder__dropdown {
+  display: none;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: 1px solid var(--black-900);
+  position: absolute;
+  right: 47px;
+  bottom: 20px;
+  background-color: var(--black-950);
+}
+
+.reminder__item .reminder__dropdown.show {
+  display: flex;
+}
+
+.reminder__item .reminder__dropdown button {
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.reminder__item .reminder__dropdown button svg {
+  color: var(--white);
+  width: 17px;
+  height: 17px;
+}
+
+.reminder > button {
+  background-color: transparent;
+  color: var(--black-300);
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: var(--black-900);
+  border-spacing: 10px;
+  margin-top: 20px;
+}
+
+.reminder > button:hover {
+  background-color: var(--blue-600);
+  color: var(--white);
+  border: none;
+}
+
+.reminder > button:hover svg {
+  color: var(--white);
+}
+
+.reminder > button svg {
+  color: var(--black-300);
+  width: 20px;
+  height: 20px;
+}
+
+.recent-orders {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recent-orders .recent-orders__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recent-orders .recent-orders__title h4 {
+  color: var(--white);
+}
+
+.recent-orders .recent-orders__title button {
+  background-color: transparent;
+  color: var(--success);
+  padding: 5px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--success);
+}
+
+.recent-orders .recent-orders__title button:hover {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.table__container {
+  padding-block: 10px;
+  border: 1px solid var(--black-900);
+  border-radius: 20px;
+}
+
+.table__container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.table__container table thead th {
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  font-weight: 500;
+}
+
+.table__container table tbody td {
+  color: var(--black-500);
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.table__container table tbody td span.success {
+  color: var(--success);
+}
+
+.table__container table tbody td span.declined {
+  color: var(--error);
+}
+
+.table__container table tbody td span.pending {
+  color: var(--warning);
+}
+
+.table__container table tbody td button {
+  background-color: transparent;
+  border: 1px solid var(--blue-600);
+  padding: 5px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--blue-600);
+  font-size: 14px;
+}
+
+.table__container table tbody td button:hover {
+  background-color: var(--blue-600);
+  color: var(--white);
+}

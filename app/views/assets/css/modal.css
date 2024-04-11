@@ -97,3 +97,178 @@
   color: var(--sangria-900);
   cursor: not-allowed;
 }
+
+/* MODAL RECORDATORIOS */
+.modal-reminder {
+  display: flex;
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  bottom: -200%;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+  overflow: auto;
+  background-color: var(--black-950);
+  border: 1px solid var(--black-900);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.modal-reminder.show {
+  bottom: 0;
+}
+
+.modal-reminder__title {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.modal-reminder__content {
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-reminder__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-reminder__form .modal-reminder__form-form-group {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  border: 1px solid var(--black-900);
+  border-radius: 10px;
+}
+
+.modal-reminder__form .modal-reminder__form-form-group span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 10px;
+  border-right: 1px solid var(--black-900);
+}
+
+.modal-reminder__form .modal-reminder__form-form-group svg {
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+}
+
+.modal-reminder__form .modal-reminder__form-form-group input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: var(--white);
+  background-color: transparent;
+  padding-left: 20px;
+}
+
+.modal-reminder__form .modal-reminder__form-form-group input:focus {
+  border: 1px solid var(--blue-600);
+  outline: none;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.modal-reminder__form .modal-reminder__form-form-group input::placeholder {
+  color: var(--black-500);
+}
+
+.modal-reminder__form .modal-reminder__form-form-group-textarea {
+  height: 100%;
+  width: 100%;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--black-900);
+  border-radius: 10px;
+}
+
+.modal-reminder__form .modal-reminder__form-form-group-textarea textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: var(--white);
+  background-color: transparent;
+  padding: 20px;
+  resize: none;
+}
+
+.modal-reminder__form .modal-reminder__form-form-group-textarea textarea:focus {
+  border: 1px solid var(--blue-600);
+  outline: none;
+  border-radius: 10px;
+}
+
+.modal-reminder__form
+  .modal-reminder__form-form-group-textarea
+  textarea::placeholder {
+  color: var(--black-500);
+}
+
+.modal-reminder__footer {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-reminder__footer .modal-reminder__footer-button {
+  width: max-content;
+  padding-inline: 20px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  gap: 5px;
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(1) {
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(1) svg {
+  color: var(--success);
+  width: 20px;
+  height: 20px;
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(1):hover {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(1):hover svg {
+  color: var(--white);
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(2) {
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(2) svg {
+  color: var(--error);
+  width: 20px;
+  height: 20px;
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(2):hover {
+  background-color: var(--error);
+  color: var(--white);
+}
+
+.modal-reminder__footer .modal-reminder__footer-button:nth-child(2):hover svg {
+  color: var(--white);
+}
