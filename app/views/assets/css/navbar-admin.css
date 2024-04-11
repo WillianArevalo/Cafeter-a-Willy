@@ -20,11 +20,11 @@
   background: transparent;
   border: 1px solid var(--black-900);
   height: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   gap: 30px;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .navbar-admin__links .link-logout {
@@ -42,7 +42,7 @@
 
 .navbar-admin__links li a.active,
 .navbar-admin__links li a.active svg {
-  color: var(--blue);
+  color: var(--blue-600);
 }
 
 .navbar-admin__links li a svg {
@@ -53,7 +53,7 @@
 
 .navbar-admin__links li a:hover,
 .navbar-admin__links li a:hover svg {
-  color: var(--blue);
+  color: var(--blue-600);
 }
 
 .link-product {
@@ -115,7 +115,7 @@
   margin-left: 250px;
   width: 100%;
   gap: 20px;
-  padding-inline: 50px;
+  padding-left: 30px;
 }
 
 .top-bar__search {
@@ -174,11 +174,12 @@
   display: none;
   position: absolute;
   top: 80px;
-  right: 65px;
+  right: 20px;
   background-color: var(--black-950);
   border-radius: 10px;
   padding: 25px;
   border: 1px solid var(--black-900);
+  z-index: 10;
 }
 
 .top-bar__user-dropdown.show {
@@ -203,11 +204,11 @@
 }
 
 .top-bar__user-dropdown ul li a:hover {
-  color: var(--blue);
+  color: var(--blue-600);
 }
 
 .top-bar__user-dropdown ul li a:hover svg {
-  color: var(--blue);
+  color: var(--blue-600);
 }
 
 .top-bar__user-dropdown ul li a svg {
@@ -254,6 +255,6 @@
 }
 
 .top-bar__user-toggle-theme button.active span#icon-moon svg {
-  color: var(--blue);
-  filter: drop-shadow(0 0 10px var(--blue));
+  color: var(--blue-600);
+  filter: drop-shadow(0 0 10px var(--blue-600));
 }
