@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'vendor/autoload.php';
 
 try {
@@ -11,6 +11,8 @@ try {
 
 # Archivo de funciones auxiliares
 require_once "app/helpers.php";
+
+registerModels();
 
 # Quitar la última barra inclinada de la URL si la tuviera
 $_SERVER['REQUEST_URI'] = rtrim($_SERVER['REQUEST_URI'], "/");
@@ -24,13 +26,13 @@ $_SERVER['REQUEST_URI'] = str_replace($urlProject, '', $_SERVER['REQUEST_URI']);
 
 
 if ($_SERVER['REQUEST_URI'] == "/" || $_SERVER['REQUEST_URI'] == "") {
-    header("Location: /coffe-project/home");
+    header("Location: /coffe-project/inicio");
     exit;
 }
 
 # Analizar la URL para determinar qué controlador y qué método se debe ejecutar
 if ($_SERVER['REQUEST_URI'] == "/home") {
-    $nameController = "HomeController";
+    $nameController = "InicioController";
     $fileController = __DIR__ . "/app/controllers/" . $nameController . ".php";
 } else {
     # Verificar si la URL tiene parámetros (variables GET) y separarlos para
@@ -41,7 +43,7 @@ if ($_SERVER['REQUEST_URI'] == "/home") {
     } else {
         $uriRequest = explode("/", $_SERVER['REQUEST_URI']);
     }
-    $nameController = ucfirst($uriRequest[1] ?? "Home") . "Controller";
+    $nameController = ucfirst($uriRequest[1] ?? "Inicio") . "Controller";
     $fileController = __DIR__ . "/app/controllers/" . $nameController . ".php";
 }
 
