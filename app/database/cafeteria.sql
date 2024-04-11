@@ -6,6 +6,7 @@ CREATE TABLE
     usuario (
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(20) NOT NULL,
+        email VARCHAR(50) NOT NULL,
         clave VARCHAR(100) NOT NULL,
         rol VARCHAR(50) NOT NULL
     );
