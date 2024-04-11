@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo asset("css", "navbar-user.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "login.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "modal.css") ?>">
+    <link rel="stylesheet" href="<?php echo asset("css", "navbar-admin.css") ?>">
 </head>
 
 <?php
