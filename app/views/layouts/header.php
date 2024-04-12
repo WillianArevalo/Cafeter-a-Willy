@@ -8,6 +8,7 @@
     <title>Coffe Willy</title>
     <link rel="shortcut icon" href="<?php echo asset("img", "logotipo.webp") ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo asset("css", "styles.css") ?>">
+    <link rel="stylesheet" href="<?php echo asset("css", "custom-class.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "navbar-user.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "login.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "modal.css") ?>">

@@ -2,12 +2,12 @@
     <section class="categorias-container">
         <div class="categorias-container__title">
             <h1>Categorías</h1>
-            <a href="<?php echo url("/categorias/nueva") ?>">
+            <a href="<?php echo url("/categorias/nueva") ?>" class="btn btn-info">
                 <?php echo icon("add-01") ?>
                 Agregar nueva categoría
             </a>
         </div>
-        <div class="categorias__table">
+        <div class="table">
             <table>
                 <thead>
                     <tr>
@@ -15,6 +15,7 @@
                         <th>Imagen</th>
                         <th>Categoría</th>
                         <th>Descripción</th>
+                        <th>Subcategorias</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -32,27 +33,26 @@
                         <td><?php echo $categoria["nombre"] ?></td>
                         <td><?php echo $categoria["descripcion"] ?></td>
                         <td>
-                            <div class="buttons-table">
-                                <a href="<?php echo url("/categorias/editar/" . $categoria["id"]) ?>" class="edit">
+                            <div class="btn-group">
+                                <button data-id="<?php echo $categoria["id"] ?>" class="btn btn-info get-subcategories"
+                                    data-url="<?php echo url("/categorias/subcategorias") ?>">
+                                    Ver subcategorias
+                                    <?php echo icon("arrow-right") ?>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="<?php echo url("/categorias/editar/" . $categoria["id"]) ?>"
+                                    class="btn btn-edit">
                                     Editar
                                     <?php echo icon("pencil-edit-02") ?>
                                 </a>
-                                <button data-id="<?php echo $categoria["id"] ?>" class="delete delete-category"
+                                <button data-id="<?php echo $categoria["id"] ?>" class="btn btn-danger delete-category"
                                     data-url="<?php echo url("/categorias/eliminar") ?>">
                                     Eliminar
                                     <?php echo icon("delete-02") ?>
                                 </button>
-                                <?php
-                                        if ($categoria["id_categoria_padre"] == null) :
-                                        ?>
-                                <a href="<?php echo url("/categorias/subcategorias/" . $categoria["id"]) ?>"
-                                    class="edit">
-                                    Subcategorías
-                                    <?php echo icon("arrow-right") ?>
-                                </a>
-                                <?php
-                                        endif;
-                                        ?>
                             </div>
                         </td>
                     </tr>

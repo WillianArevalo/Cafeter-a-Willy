@@ -1,6 +1,6 @@
 <main class="main-admin">
     <div class="categorias-nueva">
-        <h1>Nueva categoría</h1>
+        <h1>Editar categoría</h1>
         <div class="categoria-nueva__form">
             <div class="categoria-nueva__tipo">
                 <label for="tipo categoria">Tipo de categoría</label>
@@ -26,9 +26,9 @@
                     <div class="select-items select-hide">
                         <?php
                         if ($categorias != null) :
-                            foreach ($categorias as $categoria) :
+                            foreach ($categorias as $categ) :
                         ?>
-                                <div data-id="<?php echo $categoria["id"] ?>"><?php echo $categoria["nombre"] ?></div>
+                                <div><?php echo $categ["nombre"] ?></div>
                             <?php
                             endforeach;
                         else : ?>
@@ -39,22 +39,24 @@
                     </div>
                 </div>
             </div>
-            <form action="<?php echo url("/categorias/crear") ?>" method="POST" enctype="multipart/form-data" id="form-categoria" class="form">
+            <form action="<?php echo url("/categorias/actualizar") ?>" method="POST" enctype="multipart/form-data" id="form-categoria" class="form">
                 <div class="row">
                     <div class="col form">
                         <input type="hidden" value="<?php echo getToken() ?>" name="_token">
+                        <input type="hidden" value="<?php echo $categoria["id"] ?>" name="id">
                         <div class="form-group label">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la categoría" />
+                            <label for="nombre">Editar nombre</label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la categoría" value="<?php echo $categoria["nombre"] ?>" />
                         </div>
                         <div class="form-group label">
-                            <label for="descripcion">Descripción</label>
-                            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Ingrese la descripción del categoría"></textarea>
+                            <label for="descripcion">Editar descripción</label>
+                            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Ingrese la descripción del categoría"><?php echo $categoria["descripcion"] ?>
+                            </textarea>
                         </div>
                     </div>
                     <div class="col form">
                         <div class="form-group label">
-                            <label for="imagen">Imagen</label>
+                            <label for="imagen">Editar imagen</label>
                             <button type="button" onclick="document.getElementById('imagen-categoria').click()" class="btn btn-info">
                                 <?php echo icon("image-add-01") ?>
                                 Seleccionar imagen
@@ -62,26 +64,24 @@
                             <input type="file" class="hidden" name="imagen" id="imagen-categoria" accept=".jpg, .png, .jpeg, .webp" />
                         </div>
                         <div class="form-group label">
-                            <label for="preview-image">Previsualización de la imagen: </label>
+                            <label for="preview-image">Imagen: </label>
                             <div class="image-preview">
-                                <img src="" alt="Imagen categoría" id="imagen-preview-categoria">
+                                <img src="<?php echo asset("img/categorias", $categoria["imagen"]) ?>" alt="Imagen categoría" id="imagen-preview-categoria">
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-info">
-                    <?php echo icon("add-circle") ?>
-                    Agregar
+                <button type="submit" class="btn btn-edit">
+                    <?php echo icon("pencil-edit-02") ?>
+                    Editar
                 </button>
             </form>
         </div>
-        <div class="categoria-nueva__sub"></div>
     </div>
 </main>
 
 <script>
     $(document).ready(function() {
-        $("#imagen-preview-categoria").attr("src", "<?php echo asset("img", "sin-imagen.jpg") ?>");
         document.getElementById('imagen-categoria').addEventListener('change', function() {
             var archivo = this.files[0];
             if (archivo) {
@@ -93,5 +93,14 @@
                 lector.readAsDataURL(archivo);
             }
         });
+
+        var selectParent = document.querySelector(".custom-select.select-padre");
+        <?php if ($categoria["id_categoria_padre"] != null) : ?>
+            selectParent.classList.add("active");
+        <?php
+        else : ?>
+            selectParent.classList.remove("active");
+        <?php
+        endif; ?>
     });
 </script>

@@ -8,15 +8,15 @@
                 </p>
             </div>
             <div class="welcome__container-links-account">
-                <a href="#">
+                <a href="#" class="btn btn-info">
                     <?php echo icon("user-circle-02") ?>
                     Cuenta
                 </a>
-                <a href="#">
+                <a href="#" class="btn btn-info">
                     <?php echo icon("user-edit") ?>
                     Editar cuenta
                 </a>
-                <a href="#">
+                <a href="#" class="btn btn-info">
                     <?php echo icon("user-remove") ?>
                     Eliminar cuenta
                 </a>
@@ -43,9 +43,9 @@
                 <div class="recent-orders">
                     <div class="recent-orders__title">
                         <h4 class="recent-orders__title-text">Pedidos recientes</h4>
-                        <button>Ver todas</button>
+                        <button class="btn btn-info">Ver todas</button>
                     </div>
-                    <div class="table__container">
+                    <div class="table">
                         <table>
                             <thead>
                                 <tr>
@@ -65,7 +65,7 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <button>Detalles</button>
+                                        <button class="btn btn-info">Detalles</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -77,7 +77,7 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <button>Detalles</button>
+                                        <button class="btn btn-info">Detalles</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -89,7 +89,7 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <button>Detalles</button>
+                                        <button class="btn btn-info">Detalles</button>
                                     </td>
                                 </tr>
                             </tbody>
