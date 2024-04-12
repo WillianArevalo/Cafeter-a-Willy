@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
       Swal.fire({
         title: "Crear recordatorio",
         html: `
-           <div class="modal-reminder__form">
-                <div class="modal-reminder__form-form-group">
+           <div class="form">
+                <div class="form-group icon">
                     <span>
                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
                           <path d="M6 4V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </span>
                     <input type="text" class="form-group__input" id="reminder-title" placeholder="Título">
                 </div>
-                <div class="modal-reminder__form-form-group">
+                <div class="form-group icon">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
                         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </span>
                     <input type="time" class="form-group__input" id="reminder-time" placeholder="Hora">
                 </div>
-                <div class="modal-reminder__form-form-group-textarea">
+                <div class="form-group icon-textarea">
                     <textarea name="reminder-description" id="reminder-description" cols="30" rows="5"
                         placeholder="Descripción"></textarea>
                 </div>
