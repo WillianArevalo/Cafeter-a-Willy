@@ -11,11 +11,24 @@ CREATE TABLE
         rol VARCHAR(50) NOT NULL
     );
 
+INSERT INTO
+    usuario (username, email, clave, rol)
+VALUES
+    (
+        "Willian",
+        "awillianernesto@gmail.com",
+        "123",
+        "admin"
+    );
+
 CREATE TABLE
     categoria (
         id int not null auto_increment primary key,
         nombre varchar(20),
-        descripcion varchar(40)
+        descripcion varchar(40),
+        imagen varchar(200),
+        id_categoria_padre int,
+        foreign key (id_categoria_padre) references categoria (id)
     );
 
 CREATE TABLE
