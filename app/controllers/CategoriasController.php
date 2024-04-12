@@ -25,7 +25,7 @@ class CategoriasController
         verifyRole("admin");
         verifySession();
         $categoria = new Categoria($this->conn);
-        $categorias = $categoria->getAll();
+        $categorias = $categoria->getAllParent();
         loadView("categorias", "index", ["categorias" => $categorias], true, true);
     }
 
@@ -34,7 +34,7 @@ class CategoriasController
         verifyRole("admin");
         verifySession();
         $categoria = new Categoria($this->conn);
-        $categorias = $categoria->getAll();
+        $categorias = $categoria->getAllParent();
         loadView("categorias", "new", ["categorias" => $categorias], true, true);
     }
 
@@ -48,7 +48,7 @@ class CategoriasController
             return;
         }
         $categoria = new Categoria($this->conn);
-        $search = $categoria->getByName($_POST["categoria"]);
+        $search = $categoria->getByName($_POST["categoria_padre"]);
         $id_categoria_padre = ($search) ? $search["id"] : null;
 
         if (isset($_FILES["imagen"])) {
@@ -73,19 +73,110 @@ class CategoriasController
         verifyRole("admin");
         verifySession();
         $categoria = new Categoria($this->conn);
-
         $token = $_POST["_token"];
+        $id = $_POST["id"];
         if (validateToken($token) == false) {
             echo json_encode(["status" => "error", "title" => "ERROR", "message" => "Token de seguridad inválido"]);
             return;
         }
 
-        $id = $_POST["id"];
+        $search = $categoria->getById($id);
+        if (!$search) {
+            echo json_encode(["status" => "error", "title" => "ERROR", "message" => "La categoría no existe"]);
+            return;
+        }
+
+        if (!removeImage("categorias", $search["imagen"])) {
+            echo json_encode(["status" => "error", "title" => "ERROR", "message" => "Error al eliminar la imagen"]);
+            return;
+        }
+
         $delete = $categoria->delete($id);
         if ($delete) {
             echo json_encode(["status" => "success", "title" => "EXITO", "message" => "Categoría eliminada correctamente", "redirect" => url("/categorias")]);
         } else {
             echo json_encode(["status" => "error", "title" => "ERROR", "message" => "Error al eliminar la categoría",]);
+        }
+    }
+
+    public function editar()
+    {
+        verifyRole("admin");
+        verifySession();
+        $modeloCategoria = new Categoria($this->conn);
+        $id = $this->id;
+        $categorias = $modeloCategoria->getAllParent();
+        $categoria = $modeloCategoria->getById($id);
+        loadView("categorias", "edit", ["categorias" => $categorias, "categoria" => $categoria], true, true);
+    }
+
+    public function actualizar()
+    {
+        verifyRole("admin");
+        verifySession();
+        $categoria = new Categoria($this->conn);
+        $token = $_POST["_token"];
+        $nombre = $_POST["nombre"];
+        $descripcion = $_POST["descripcion"];
+        $id = $_POST["id"];
+
+        if (validateToken($token) == false) {
+            echo json_encode(["status" => "error", "title" => "ERROR", "message" => "Token de seguridad inválido"]);
+            return;
+        }
+
+        $categoriaPadre = $categoria->getByName($_POST["categoria_padre"]);
+        $id_categoria_padre = ($categoriaPadre) ? $categoriaPadre["id"] : null;
+
+
+        if ($id == $id_categoria_padre) {
+            echo json_encode(["status" => "error", "title" => "ERROR", "message" => "La categoría no puede ser su propia subcategoría"]);
+            return;
+        }
+
+        $search = $categoria->getById($id);
+        if (!$search) {
+            echo json_encode(["status" => "error", "title" => "ERROR", "message" => "La categoría no existe"]);
+            return;
+        }
+
+        if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == 0) {
+            if (!removeImage("categorias", $search["imagen"])) {
+                echo json_encode(["status" => "error", "title" => "ERROR", "message" => "Error al eliminar la imagen anterior"]);
+                return;
+            }
+            $imagen = uploadImage("categorias", "imagen");
+        } else {
+            $imagen = $search["imagen"];
+        }
+
+
+        $data = array(
+            "nombre" => $nombre,
+            "descripcion" => $descripcion,
+            "imagen" => $imagen,
+            "id_categoria_padre" => $id_categoria_padre,
+            "id" => $id
+        );
+
+        $update = $categoria->update($data);
+        if ($update) {
+            echo json_encode(["status" => "success", "title" => "EXITO", "message" => "Categoría actualizada correctamente", "redirect" => url("/categorias")]);
+        } else {
+            echo json_encode(["status" => "error", "title" => "ERROR", "message" => "Error al actualizar la categoría",]);
+        }
+    }
+
+    public function subcategorias()
+    {
+        $categoria = new Categoria($this->conn);
+        $id = $_POST["id"];
+        $subcategorias = $categoria->getAllChilds($id);
+        if ($subcategorias) {
+            $html = getSubcategories($subcategorias);
+            echo json_encode(["title" => "Subcategorías", "status" => "success", "subcategorias" => $subcategorias, "html" => $html]);
+        } else {
+            echo json_encode(["title" => "No se encontraron subcategorias", "status" => "info", "message" => ""]);
         }
     }
 }
