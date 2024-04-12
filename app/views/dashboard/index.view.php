@@ -175,40 +175,4 @@
             </div>
         </div>
     </section>
-
-    <div class="modal-reminder" id="modal-reminder">
-        <div class="modal-reminder__title">
-            <h5>Agregar recordatorio</h5>
-        </div>
-        <div class="modal-reminder__content">
-            <div class="modal-reminder__form">
-                <div class="modal-reminder__form-form-group">
-                    <span>
-                        <?php echo icon("heading") ?>
-                    </span>
-                    <input type="text" class="form-group__input" id="reminder-title" placeholder="Título">
-                </div>
-                <div class="modal-reminder__form-form-group">
-                    <span>
-                        <?php echo icon("clock-01") ?>
-                    </span>
-                    <input type="time" class="form-group__input" id="reminder-time" placeholder="Hora">
-                </div>
-                <div class="modal-reminder__form-form-group-textarea">
-                    <textarea name="reminder-description" id="reminder-description" cols="30" rows="5"
-                        placeholder="Descripción"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="modal-reminder__footer">
-            <button class="modal-reminder__footer-button" id="button-save-reminder">
-                <?php echo icon("add-circle") ?>
-                Guardar
-            </button>
-            <button class="modal-reminder__footer-button" id="button-cancel-reminder">
-                <?php echo icon("cancel-circle") ?>
-                Cancelar
-            </button>
-        </div>
-    </div>
 </main>

@@ -6,19 +6,19 @@
         </div>
         <ul class="navbar-admin__links">
             <li>
-                <a href="/admin" class="active">
+                <a href="<?php echo url("/dashboard") ?>" class="active">
                     <?php echo icon("dashboard") ?>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="/admin/users">
+                <a href="<?php echo url("/usuarios") ?>">
                     <?php echo icon("users") ?>
                     Usuarios
                 </a>
             </li>
             <li>
-                <a href="/admin/posts">
+                <a href="<?php echo url("/categorias") ?>">
                     <?php echo icon("bookmark") ?>
                     Categorías
                 </a>

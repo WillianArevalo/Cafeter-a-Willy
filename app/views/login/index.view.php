@@ -5,6 +5,7 @@
             <h3 class="login__header-title">Inicia sesión</h3>
         </div>
         <form action="<?php echo url("/login/validate_user") ?>" method="POST" id="form-login" class="login__form">
+            <input type="hidden" name="_token" value="<?php echo getToken() ?>">
             <div class="login__form-form-group">
                 <input type="text" class="form-group__input" name="username" id="username" placeholder="Usuario">
                 <span>
@@ -13,8 +14,7 @@
             </div>
             <small class="login__form-message"></small>
             <div class="login__form-form-group">
-                <input type="password" class="form-group__input" name="password" id="password"
-                    placeholder="Contraseña" />
+                <input type="password" class="form-group__input" name="password" id="password" placeholder="Contraseña" />
                 <span>
                     <?php echo icon("security-password") ?>
                 </span>

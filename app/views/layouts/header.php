@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="<?php echo getToken() ?>">
     <title>Coffe Willy</title>
     <link rel="shortcut icon" href="<?php echo asset("img", "logotipo.webp") ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo asset("css", "styles.css") ?>">
@@ -12,6 +13,9 @@
     <link rel="stylesheet" href="<?php echo asset("css", "modal.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "navbar-admin.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "dashboard.css") ?>">
+    <link rel="stylesheet" href="<?php echo asset("css", "categorias.css") ?>">
+    <!-- SweetAlert 2 -->
+    <link rel="stylesheet" href="<?php echo node_module("sweetalert2", "dist/sweetalert2.css") ?>">
     <script src="<?php echo asset("js", "jquery-3.7.1.min.js") ?>"></script>
 </head>
 
@@ -22,26 +26,4 @@ $rol = ($user == "") ? "usuario" : $user["rol"];
 
 <body class="body-<?php echo $rol ?>" id="body">
     <div id="overlay">
-    </div>
-
-    <div class="modal" id="modal">
-        <div class="modal__title" id="modal-title">
-            <h3>Error</h3>
-        </div>
-        <div class="modal__content">
-            <div class="modal__icon" id="modal-icon">
-                <span id="error">
-                    <?php echo icon("alert") ?>
-                </span>
-                <span id="success">
-                    <?php echo icon("check") ?>
-                </span>
-            </div>
-            <div class="modal__message" id="modal-message">
-                <p>Usuario no encontrado</p>
-            </div>
-        </div>
-        <div class="modal__footer">
-            <button class="modal__button" id="modal-close">Aceptar</button>
-        </div>
     </div>
