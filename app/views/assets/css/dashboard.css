@@ -40,7 +40,7 @@
 }
 
 .welcome__container-links-account a {
-  color: var(--black-500);
+  color: var(--blue-600);
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 10px;
@@ -48,49 +48,21 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  border: 1px solid var(--blue-600);
 }
 
-.welcome__container-links-account a:nth-child(1),
-.welcome__container-links-account a:nth-child(2) {
-  color: var(--success);
-  border: 1px solid var(--success);
-}
-
-.welcome__container-links-account a:nth-child(1) svg,
-.welcome__container-links-account a:nth-child(2) svg {
-  color: var(--success);
+.welcome__container-links-account a svg {
+  color: var(--blue-600);
   width: 20px;
   height: 20px;
 }
 
-.welcome__container-links-account a:nth-child(1):hover,
-.welcome__container-links-account a:nth-child(2):hover {
-  background-color: var(--success);
+.welcome__container-links-account a:hover {
+  background-color: var(--blue-600);
   color: var(--white);
 }
 
-.welcome__container-links-account a:nth-child(1):hover svg,
-.welcome__container-links-account a:nth-child(2):hover svg {
-  color: var(--white);
-}
-
-.welcome__container-links-account a:nth-child(3) {
-  color: var(--error);
-  border: 1px solid var(--error);
-}
-
-.welcome__container-links-account a:nth-child(3) svg {
-  color: var(--error);
-  width: 20px;
-  height: 20px;
-}
-
-.welcome__container-links-account a:nth-child(3):hover {
-  background-color: var(--error);
-  color: var(--white);
-}
-
-.welcome__container-links-account a:nth-child(3):hover svg {
+.welcome__container-links-account a:hover svg {
   color: var(--white);
 }
 
@@ -130,7 +102,7 @@
 }
 
 .counts .counts__item .counts__item-title {
-  color: var(--black-500);
+  color: var(--white);
 }
 
 .counts .counts__item .counts__item-number {
@@ -338,18 +310,18 @@
 
 .recent-orders .recent-orders__title button {
   background-color: transparent;
-  color: var(--success);
+  color: var(--blue-600);
   padding: 5px 20px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1px solid var(--success);
+  border: 1px solid var(--blue-600);
 }
 
 .recent-orders .recent-orders__title button:hover {
-  background-color: var(--success);
+  background-color: var(--blue-600);
   color: var(--white);
 }
 
