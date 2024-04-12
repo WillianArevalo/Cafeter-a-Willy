@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const linkProduct = document.querySelector(".link-product");
   const dropdownMenuProduct = document.querySelector(".dropdown-menu-product");
 
-  perfilImage.addEventListener("click", function () {
-    dropdownMenu.classList.toggle("show");
-  });
+  if (perfilImage) {
+    perfilImage.addEventListener("click", function () {
+      dropdownMenu.classList.toggle("show");
+    });
+  }
 
   function toggleActive(button) {
     sunButton.classList.remove("active");
@@ -16,15 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
     button.classList.add("active");
   }
 
-  sunButton.addEventListener("click", function () {
-    toggleActive(sunButton);
-  });
+  if (sunButton) {
+    sunButton.addEventListener("click", function () {
+      toggleActive(sunButton);
+    });
+  }
 
-  moonButton.addEventListener("click", function () {
-    toggleActive(moonButton);
-  });
+  if (moonButton) {
+    moonButton.addEventListener("click", function () {
+      toggleActive(moonButton);
+    });
+  }
 
-  linkProduct.addEventListener("click", function () {
-    dropdownMenuProduct.classList.toggle("active");
-  });
+  if (linkProduct) {
+    linkProduct.addEventListener("click", function () {
+      dropdownMenuProduct.classList.toggle("active");
+    });
+  }
 });

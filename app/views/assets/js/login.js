@@ -1,5 +1,3 @@
-import { showModal } from "./functions.js";
-
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("form-login");
   const username = document.getElementById("username");
@@ -37,14 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
           success: function (response) {
             var data = JSON.parse(response);
             if (data.status == "success") {
-              $("#modal-close").text("Redirigiendo...");
-              $("#modal-close").prop("disabled", true);
-              showModal(data.title, data.message, data.status);
-              setTimeout(() => {
+              Swal.fire({
+                title: data.title,
+                text: data.message,
+                icon: data.status,
+                confirmButtonText: "Aceptar",
+              }).then(() => {
                 window.location.href = data.redirect;
-              }, 2000);
+              });
             } else {
-              showModal(data.title, data.message, data.status);
+              Swal.fire({
+                title: data.title,
+                text: data.message,
+                icon: data.status,
+              });
             }
           },
         });
