@@ -146,8 +146,3 @@ body.hidden {
 *::-webkit-scrollbar-thumb:active {
   background-color: var(--black-900);
 }
-
-.swal-modal {
-  background-color: var(--black-950) !important;
-  color: var(--white) !important;
-}

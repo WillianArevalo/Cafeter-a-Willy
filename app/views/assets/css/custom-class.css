@@ -1,0 +1,378 @@
+/* BUTTONS */
+
+button.btn,
+a.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button.btn-edit,
+a.btn-edit {
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+button.btn-edit svg,
+a.btn-edit svg {
+  color: var(--success);
+  width: 20px;
+  height: 20px;
+}
+
+button.btn-edit:hover,
+a.btn-edit:hover {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+button.btn-edit:hover svg,
+a.btn-edit:hover svg {
+  color: var(--white);
+}
+
+button.btn-danger,
+a.btn-danger {
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+button.btn-danger svg,
+a.btn-danger svg {
+  color: var(--error);
+  width: 20px;
+  height: 20px;
+}
+
+button.btn-danger:hover,
+a.btn-danger:hover {
+  background-color: var(--error);
+  color: var(--white);
+}
+
+button.btn-danger:hover svg,
+a.btn-delete:hover svg {
+  color: var(--white);
+}
+
+button.btn-info,
+a.btn-info {
+  border: 1px solid var(--blue-600);
+  color: var(--blue-600);
+}
+
+button.btn-info svg,
+a.btn-info svg {
+  color: var(--blue-600);
+  width: 20px;
+  height: 20px;
+}
+
+button.btn-info:hover,
+a.btn-info:hover {
+  background-color: var(--blue-600);
+  color: var(--white);
+}
+
+button.btn-info:hover svg,
+a.btn-info:hover svg {
+  color: var(--white);
+}
+
+button:disabled {
+  background-color: var(--black-200);
+  color: var(--black-400);
+  cursor: not-allowed;
+}
+
+button:disabled svg {
+  color: var(--black-400);
+}
+
+button:disabled:hover {
+  background-color: var(--black-200);
+  color: var(--black-400);
+}
+
+button:disabled:hover svg {
+  color: var(--black-400);
+}
+
+/*  TABLES  */
+
+.table {
+  padding-block: 10px;
+  border: 1px solid var(--black-900);
+  border-radius: 20px;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.table table thead th {
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  font-weight: 500;
+}
+
+.table table tbody td {
+  color: var(--black-500);
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.table table tbody td img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.table table tbody td span.success {
+  color: var(--success);
+}
+
+.table table tbody td span.declined {
+  color: var(--error);
+}
+
+.table table tbody td span.pending {
+  color: var(--warning);
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORMS */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* FORM GROUP LABEL */
+.form-group.label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group.label label {
+  color: var(--white);
+}
+
+.form-group.label input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--black-900);
+  background-color: transparent;
+  color: var(--white);
+}
+
+.form-group.label input:focus,
+.form-group.label textarea:focus {
+  outline: none;
+  border: 1px solid var(--blue-600);
+}
+
+.form-group textarea {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--black-900);
+  background-color: transparent;
+  resize: none;
+  color: var(--white);
+  height: 100%;
+  width: 100%;
+}
+
+/* FORM GROUP ICON */
+.form-group.icon {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  border: 1px solid var(--black-900);
+  border-radius: 10px;
+}
+
+.form-group.icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 15px;
+  border-right: 1px solid var(--black-900);
+}
+
+.form-group.icon span svg {
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+}
+
+.form-group.icon input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: var(--white);
+  background-color: transparent;
+  padding-left: 20px;
+}
+
+.form-group.icon input:focus {
+  border: 1px solid var(--blue-600);
+  outline: none;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.form-group.icon input::placeholder {
+  color: var(--black-500);
+}
+
+/* SELECT CUSTOM */
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid var(--blue-600);
+  width: 250px;
+  height: 44px;
+}
+
+.custom-select__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.custom-select__content .icon-select {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-select__content .icon-select svg {
+  color: var(--blue-600);
+}
+
+.custom-select__content .select-selected {
+  padding: 10px;
+  border: none;
+  width: 200px;
+  color: var(--blue-600);
+  text-align: center;
+  flex: 3;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.select-items {
+  display: none;
+  position: absolute;
+  background-color: var(--black-950);
+  border: 1px solid var(--black-900);
+  border-radius: 5px;
+  z-index: 50;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.select-items div {
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+}
+
+.select-items div:hover {
+  background-color: var(--white);
+  color: var(--black-950);
+}
+
+.select-padre {
+  display: none;
+  width: 300px;
+}
+
+.select-padre.active {
+  display: block;
+}
+
+/* GRID */
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col {
+  flex: 1;
+}
+
+.col-2 {
+  flex: 2;
+}
+
+.col-3 {
+  flex: 3;
+}
+
+.col-4 {
+  flex: 4;
+}
+
+.col-5 {
+  flex: 5;
+}
+
+.col-6 {
+  flex: 6;
+}
+
+.col-7 {
+  flex: 7;
+}
+
+.col-8 {
+  flex: 8;
+}
+
+.col-9 {
+  flex: 9;
+}
+
+.col-10 {
+  flex: 10;
+}
+
+.col-11 {
+  flex: 11;
+}
+
+.col-12 {
+  flex: 12;
+}

@@ -14,145 +14,6 @@
   color: var(--white);
 }
 
-.categorias-container__title a {
-  background-color: transparent;
-  color: var(--blue-600);
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1px solid var(--blue-600);
-  text-decoration: none;
-  gap: 5px;
-}
-
-.categorias-container__title a svg {
-  color: var(--blue-600);
-  width: 20px;
-  height: 20px;
-}
-
-.categorias-container__title a:hover {
-  background-color: var(--blue-600);
-  color: var(--white);
-}
-
-.categorias-container__title a:hover svg {
-  color: var(--white);
-}
-
-.categorias__table {
-  padding-block: 10px;
-  border: 1px solid var(--black-900);
-  border-radius: 20px;
-}
-
-.categorias__table table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: transparent;
-}
-
-.categorias__table table thead th {
-  color: var(--white);
-  text-align: center;
-  padding: 20px;
-  font-weight: 500;
-}
-
-.categorias__table table tbody td {
-  color: var(--black-500);
-  text-align: center;
-  padding: 10px 20px;
-}
-
-.categorias__table table tbody td img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.categorias__table table tbody td span.success {
-  color: var(--success);
-}
-
-.categorias__table table tbody td span.declined {
-  color: var(--error);
-}
-
-.categorias__table table tbody td span.pending {
-  color: var(--warning);
-}
-
-.categorias__table table tbody td button,
-.categorias__table table tbody td a {
-  background-color: transparent;
-  border: 1px solid var(--blue-600);
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--blue-600);
-  font-size: 14px;
-  text-decoration: none;
-  gap: 5px;
-}
-
-.categorias__table table tbody td a.edit {
-  background-color: transparent;
-  color: var(--success);
-  border: 1px solid var(--success);
-}
-
-.categorias__table table tbody td a.edit svg {
-  color: var(--success);
-  width: 20px;
-  height: 20px;
-}
-
-.categorias__table table tbody td button.delete {
-  background-color: transparent;
-  color: var(--error);
-  border: 1px solid var(--error);
-}
-
-.categorias__table table tbody td button.delete svg {
-  color: var(--error);
-  width: 20px;
-  height: 20px;
-}
-
-.categorias__table table tbody td a.edit:hover {
-  background-color: var(--success);
-  color: var(--white);
-}
-
-.categorias__table table tbody td a.edit:hover svg {
-  color: var(--white);
-}
-
-.categorias__table table tbody td button.delete:hover {
-  background-color: var(--error);
-  color: var(--white);
-}
-
-.categorias__table table tbody td button.delete:hover svg {
-  color: var(--white);
-}
-
-.buttons-table {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
 .categorias-nueva {
   display: flex;
   align-items: start;
@@ -180,174 +41,9 @@
   color: var(--white);
 }
 
-/*SELECT CUSTOM*/
-
-.custom-select {
-  position: relative;
-  display: inline-block;
-  border-radius: 5px;
-  background: transparent;
-  border: 1px solid var(--blue-600);
-  width: 250px;
-  height: 44px;
-}
-
-.custom-select__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.custom-select__content .icon-select {
-  flex: 1;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.custom-select__content .icon-select svg {
-  color: var(--blue-600);
-}
-
-.custom-select__content .select-selected {
-  padding: 10px;
-  border: none;
-  width: 200px;
-  color: var(--blue-600);
-  text-align: center;
-  flex: 3;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-}
-
-.select-items {
-  display: none;
-  position: absolute;
-  background-color: var(--black-950);
-  border: 1px solid var(--black-900);
-  border-radius: 5px;
-  z-index: 50;
-  width: 100%;
-  margin-top: 5px;
-}
-
-.select-items div {
-  padding: 10px 20px;
-  font-family: "Poppins", sans-serif;
-  color: var(--white);
-}
-
-.select-items div:hover {
-  background-color: var(--white);
-  color: var(--black-950);
-}
-
-.select-padre {
-  display: none;
-  width: 300px;
-}
-
-.select-padre.active {
-  display: block;
-}
-
-/* END SELECT CUSTOM */
-
-.categoria-nueva__form form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.categoria-nueva__form form .form {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  width: 100%;
-  gap: 20px;
-}
-
-.categoria-nueva__form form .form__col-1,
-.categoria-nueva__form form .form__col-2 {
-  flex: 1;
-}
-
-.categoria-nueva__form form .form__col-1 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.form-group label {
-  color: var(--white);
-}
-
-.form-group input {
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid var(--black-900);
-  background-color: transparent;
-  color: var(--white);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border: 1px solid var(--blue-600);
-}
-
-.form-group textarea {
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid var(--black-900);
-  background-color: transparent;
-  resize: none;
-  color: var(--white);
-}
-
-.categoria-nueva__form form .form__col-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: start;
-}
-
 .categoria-nueva__form form > button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid var(--blue-600);
-  background-color: transparent;
-  color: var(--blue-600);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
   width: max-content;
   margin: auto;
-}
-
-.categoria-nueva__form form > button svg {
-  color: var(--blue-600);
-  width: 20px;
-  height: 20px;
-}
-
-.categoria-nueva__form form > button:hover {
-  background-color: var(--blue-600);
-  color: var(--white);
-}
-
-.categoria-nueva__form form > button:hover svg {
-  color: var(--white);
 }
 
 .form-group-image {
@@ -358,34 +54,6 @@
 }
 
 .form-group-image label {
-  color: var(--white);
-}
-
-.form-group-image button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid var(--blue-600);
-  background-color: transparent;
-  color: var(--blue-600);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.form-group-image button svg {
-  color: var(--blue-600);
-  width: 20px;
-  height: 20px;
-}
-
-.form-group-image button:hover {
-  background-color: var(--blue-600);
-  color: var(--white);
-}
-
-.form-group-image button:hover svg {
   color: var(--white);
 }
 
@@ -420,7 +88,7 @@
 #modal-image {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 3000;
   left: 0;
   top: 0;
   width: 100%;
@@ -471,4 +139,56 @@
 
 .close:hover svg {
   color: var(--black-500);
+}
+
+.subcategorias {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subcategoria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid var(--black-900);
+}
+
+.subcategoria__imagen {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.subcategoria__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subcategoria__nombre {
+  color: var(--white);
+  font-size: 14px;
+}
+
+.subcategoria__descripcion {
+  color: var(--white);
+  font-size: 14px;
+}
+
+.subcategoria .btn-group a,
+.subcategoria .btn-group button {
+  padding: 10px;
+}
+
+.subcategoria .btn-group a svg,
+.subcategoria .btn-group button svg {
+  width: 15px;
+  height: 15px;
 }
