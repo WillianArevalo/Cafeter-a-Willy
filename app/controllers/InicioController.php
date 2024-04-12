@@ -6,6 +6,7 @@ class InicioController
     public function index()
     {
         unsetSession("user");
-        loadView("home", "index", [], true, true);
+        generateToken();
+        loadView("inicio", "index", [], true, true);
     }
 }
