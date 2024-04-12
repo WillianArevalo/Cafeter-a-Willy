@@ -13,6 +13,7 @@ try {
 require_once "app/helpers.php";
 
 registerModels();
+registerFunctionsAjax();
 
 # Quitar la última barra inclinada de la URL si la tuviera
 $_SERVER['REQUEST_URI'] = rtrim($_SERVER['REQUEST_URI'], "/");
