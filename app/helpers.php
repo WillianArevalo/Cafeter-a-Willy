@@ -35,6 +35,18 @@ function asset($type, $nameFile)
 }
 
 /**
+ * Función para cargar los archivos que estan en la carpeta node_modules
+ * @param string $lib librería a cargar
+ * @param string $archivo archivo a cargar
+ * @return string url completa del archivo
+ */
+
+function node_module($lib, $archivo)
+{
+    return $_ENV['URL'] . "/node_modules/" . $lib . "/" . $archivo;
+}
+
+/**
  * Functión para verificar si un usuario ha iniciado sesión
  * @return void
  */
@@ -87,6 +99,46 @@ function verifyRole($role)
 }
 
 /**
+ * Función para generar un token de seguridad
+ * @return void
+ */
+
+function generateToken()
+{
+    if (!isset($_SESSION["crs_token"])) {
+        $token = bin2hex(random_bytes(32)) . uniqid();
+        $_SESSION["crs_token"] = $token;
+    } else {
+        $token = $_SESSION["crs_token"];
+    }
+}
+
+
+/**
+ * Función para obtener el token de seguridad
+ * @return string token de seguridad
+ */
+
+function getToken()
+{
+    return getSession("crs_token");
+}
+
+/**
+ * Función para validar el token de seguridad
+ * @param string $token token de seguridad
+ * @return boolean true si el token es válido, false si no lo es
+ */
+
+function validateToken($token)
+{
+    if ($token != $_SESSION["crs_token"]) {
+        return false;
+    }
+    return true;
+}
+
+/**
  * Función para cargar una vista
  * @param string $controller Nombre del controlador
  * @param string $action Nombre del método del controlador
@@ -136,5 +188,24 @@ function icon($icon)
         return $iconSvg;
     } else {
         return "Icono no encontrado";
+    }
+}
+
+
+/**
+ * Función para subir una imagen
+ * @param string $directory Directorio donde se guardará la imagen
+ * @param string $image Nombre del input file
+ * @return string Nombre de la imagen
+ */
+
+function uploadImage($directory, $image)
+{
+    $nameFile = $_FILES[$image]['name'];
+    $path = __DIR__ . "/views/assets/img/" . $directory . "/" . $nameFile;
+    if (move_uploaded_file($_FILES[$image]['tmp_name'], $path)) {
+        return $nameFile;
+    } else {
+        return "Error al subir la imagen";
     }
 }
