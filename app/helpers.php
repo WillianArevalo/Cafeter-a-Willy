@@ -24,6 +24,18 @@ function registerModels()
 }
 
 /**
+ * Función para cargar los archivos que contienen las respuestas a las peticiones AJAX
+ * @return void
+ */
+
+function registerFunctionsAjax()
+{
+    foreach (glob("app/views/ajax/*.php") as $fileAjax) {
+        require_once($fileAjax);
+    }
+}
+
+/**
  * Función para cargar un asset (archivo css, js, img, svg)
  * @param string $type Tipo de asset (css, js, img, svg)
  * @param string $nameFile Nombre del archivo
@@ -207,5 +219,27 @@ function uploadImage($directory, $image)
         return $nameFile;
     } else {
         return "Error al subir la imagen";
+    }
+}
+
+
+/**
+ * Función para eliminar una imagen
+ * @param string $directory Directorio donde se encuentra la imagen
+ * @param string $image Nombre de la imagen
+ * @return boolean true si la imagen se eliminó, false si no se eliminó
+ */
+
+function removeImage($directory, $image)
+{
+    $path = __DIR__ . "/views/assets/img/" . $directory . "/" . $image;
+    if (file_exists($path)) {
+        if (unlink($path)) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
     }
 }
