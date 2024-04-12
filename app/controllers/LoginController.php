@@ -26,9 +26,13 @@ class LoginController
 
     public function validate_user()
     {
-        if (!isset($_POST["username"]) || !isset($_POST["password"])) {
+        $token = $_POST["_token"];
+
+        if (validateToken($token) == false) {
+            echo json_encode(["title" => "Error", "status" => "error", "message" => "Token de seguridad inválido"]);
             return;
         }
+
         $username = $_POST["username"];
         $clave = $_POST["password"];
         $usuario = new Usuario($this->conn);
