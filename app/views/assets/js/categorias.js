@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function (event) {
     if (event.target.classList.contains("delete-subcategory")) {
       const btn = event.target;
-
       Swal.fire({
         title: "¿Estás seguro de eliminar la subcategoría?",
         text: "Una vez eliminado, no podrás recuperar este registro",

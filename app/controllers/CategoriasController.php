@@ -107,6 +107,10 @@ class CategoriasController
         $categorias = $modeloCategoria->getAllParent();
         $categoria = $modeloCategoria->getById($id);
 
+        if (!$categoria) {
+            loadView("error", "404", ["title" => "404 PÁGINA NO ENCONTRADA", "message" => "Categoria no encontrada"], false, true);
+        }
+
         if ($categoria["id_categoria_padre"] != null) {
             $categoriaPadre = $modeloCategoria->getById($categoria["id_categoria_padre"]);
         } else {
@@ -154,7 +158,6 @@ class CategoriasController
         } else {
             $imagen = $search["imagen"];
         }
-
 
         $data = array(
             "nombre" => $nombre,

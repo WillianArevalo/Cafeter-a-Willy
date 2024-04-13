@@ -1,13 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var searchInput = document.getElementById("search");
+  var searchInput = document.querySelectorAll(".search-input");
   var searchBuutons = document.querySelectorAll(".button-search");
-  searchInput.addEventListener("keyup", function () {
-    let filter = searchInput.value.toUpperCase();
-    filterTable(filter);
+
+  if (!searchInput) return;
+
+  searchInput.forEach(function (input) {
+    input.addEventListener("keyup", function () {
+      let filter = input.value.toUpperCase();
+      let id = input.getAttribute("data-id-table");
+      filterTable(filter, id);
+    });
   });
 
-  function filterTable(filter) {
-    let table = document.getElementById("tabla-categorias");
+  function filterTable(filter, tablaId) {
+    let table = document.getElementById(tablaId);
     let tbody = table.getElementsByTagName("tbody")[0];
     let rows = tbody.getElementsByTagName("tr");
 
@@ -41,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  if (!searchBuutons) return;
   searchBuutons.forEach(function (button) {
     button.addEventListener("click", function () {
       searchBuutons.forEach(function (button) {
         button.classList.remove("active");
       });
-
       button.classList.toggle("active");
       const filter = button.getAttribute("data-filter");
       const url = button.getAttribute("data-url");
