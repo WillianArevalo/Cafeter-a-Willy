@@ -15,6 +15,7 @@
 
 :root {
   --white: #ffffff;
+  --black-hover: #0e0e0e;
   --black-50: #f6f6f6;
   --black-100: #e7e7e7;
   --black-200: #d1d1d1;
@@ -120,6 +121,7 @@ body.body-usuario {
 
 body.body-admin {
   background-color: var(--black-950);
+  overflow-x: hidden;
 }
 
 body.hidden {

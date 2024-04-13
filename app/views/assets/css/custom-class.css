@@ -67,6 +67,11 @@ a.btn-info {
   color: var(--blue-600);
 }
 
+button.btn-info.active {
+  background-color: var(--blue-600);
+  color: var(--white);
+}
+
 button.btn-info svg,
 a.btn-info svg {
   color: var(--blue-600);
@@ -110,12 +115,17 @@ button:disabled:hover svg {
   padding-block: 10px;
   border: 1px solid var(--black-900);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .table table {
   width: 100%;
   border-collapse: collapse;
   background-color: transparent;
+}
+
+.table table tbody tr:hover {
+  background-color: var(--black-hover);
 }
 
 .table table thead th {
