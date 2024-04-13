@@ -1,0 +1,25 @@
+.usuarios-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.usuarios-container__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.usuarios-container__title h1 {
+  color: var(--white);
+}
+
+.container-nuevo-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-nuevo-usuario h1 {
+  color: var(--white);
+}

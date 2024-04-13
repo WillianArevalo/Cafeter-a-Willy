@@ -57,7 +57,7 @@ a.btn-danger:hover {
 }
 
 button.btn-danger:hover svg,
-a.btn-delete:hover svg {
+a.btn-danger:hover svg {
   color: var(--white);
 }
 
@@ -254,6 +254,33 @@ button:disabled:hover svg {
   color: var(--black-500);
 }
 
+.form-group.label select {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--black-900);
+  background-color: transparent;
+  color: var(--white);
+  width: 100%;
+}
+
+.form-group.icon select {
+  padding: 10px 20px;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+  width: 100%;
+}
+
+.form-group select:focus {
+  outline: none;
+  border: 1px solid var(--blue-600);
+}
+
+.form-group select option {
+  color: var(--black-500);
+}
+
 /* SELECT CUSTOM */
 
 .custom-select {
@@ -385,4 +412,28 @@ button:disabled:hover svg {
 
 .col-12 {
   flex: 12;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mt-10 {
+  margin-block: 10px;
+}
+
+.mt-20 {
+  margin-block: 20px;
+}
+
+.mt-30 {
+  margin-block: 30px;
+}
+
+.mt-40 {
+  margin-block: 40px;
+}
+
+.mt-50 {
+  margin-block: 50px;
 }
