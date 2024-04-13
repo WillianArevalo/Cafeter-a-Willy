@@ -18,7 +18,9 @@
                 </div>
                 <div class="custom-select select-padre">
                     <div class="custom-select__content">
-                        <div class="select-selected categoria">Selecciona una categoría</div>
+                        <div class="select-selected categoria">
+                            <?php echo ($categoriaPadre != null) ? $categoriaPadre["nombre"] : "Selecciona una categoria" ?>
+                        </div>
                         <div class="icon-select">
                             <?php echo icon("arrow-down") ?>
                         </div>

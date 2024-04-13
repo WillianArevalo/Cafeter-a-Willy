@@ -5,6 +5,7 @@
 <script src="<?php echo asset("js", "select.js") ?>"></script>
 <script src="<?php echo asset("js", "categorias.js") ?>"></script>
 <script src="<?php echo asset("js", "modal-image.js") ?>"></script>
+<script src="<?php echo asset("js", "search.js") ?>"></script>
 </body>
 
 </html>
