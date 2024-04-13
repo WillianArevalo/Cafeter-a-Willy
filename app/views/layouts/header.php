@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?php echo asset("css", "navbar-admin.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "dashboard.css") ?>">
     <link rel="stylesheet" href="<?php echo asset("css", "categorias.css") ?>">
+    <link rel="stylesheet" href="<?php echo asset("css", "usuarios.css") ?>">
+    <link rel="stylesheet" href="<?php echo asset("css", "error.css") ?>">
     <!-- SweetAlert 2 -->
     <link rel="stylesheet" href="<?php echo node_module("sweetalert2", "dist/sweetalert2.css") ?>">
     <script src="<?php echo asset("js", "jquery-3.7.1.min.js") ?>"></script>
