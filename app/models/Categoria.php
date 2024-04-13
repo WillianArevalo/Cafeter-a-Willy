@@ -41,11 +41,21 @@ class Categoria
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getAllChilds($id)
+    public function getAllChildsById($id)
     {
         $query = "SELECT * FROM categoria WHERE id_categoria_padre = ?";
         $stmt = $this->connection->prepare($query);
         $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAllChilds()
+    {
+        $query = "SELECT * FROM categoria WHERE id_categoria_padre IS NOT NUll";
+        $stmt = $this->connection->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
