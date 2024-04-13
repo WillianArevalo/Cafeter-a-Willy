@@ -8,6 +8,8 @@ CREATE TABLE
         username VARCHAR(20) NOT NULL,
         email VARCHAR(50) NOT NULL,
         clave VARCHAR(100) NOT NULL,
+        imagen VARCHAR(200),
+        direccion VARCHAR(255),
         rol VARCHAR(50) NOT NULL
     );
 
@@ -23,12 +25,12 @@ VALUES
 
 CREATE TABLE
     categoria (
-        id int not null auto_increment primary key,
-        nombre varchar(20),
-        descripcion varchar(40),
-        imagen varchar(200),
-        id_categoria_padre int,
-        foreign key (id_categoria_padre) references categoria (id)
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nombre VARCHAR(20),
+        descripcion VARCHAR(40),
+        imagen VARCHAR(200),
+        id_categoria_padre INT,
+        FOREIGN KEY (id_categoria_padre) REFERENCES categoria (id)
     );
 
 CREATE TABLE
