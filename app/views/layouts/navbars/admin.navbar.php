@@ -1,3 +1,5 @@
+<?php $user = getSession("user"); ?>
+
 <header class="header-admin">
     <nav class="navbar-admin">
         <div class="navbar-admin__logo">
@@ -62,8 +64,8 @@
                     Ventas
                 </a>
             </li>
-            <li class="link-logout">
-                <a href="/admin/logout">
+            <li class="link-logout" data-url="<?php echo url("/login/logout") ?>">
+                <a href="#">
                     <?php echo icon("logout") ?>
                     Cerrar sesión
                 </a>
@@ -90,7 +92,8 @@
                     </span>
                 </button>
             </div>
-            <img src="<?php echo asset("img", "perfil.jpg") ?>" alt="Imagen de perfil del usuario" id="image-perfil">
+            <img src="<?php echo ($user["imagen"] == "") ? asset("img", "sin-perfil.jpeg") : asset("img/usuarios", $user["imagen"])   ?>"
+                alt="Imagen de perfil del usuario" id="image-perfil">
             <div class="top-bar__user-dropdown">
                 <ul class="top-bar__user-dropdown-links">
                     <li>

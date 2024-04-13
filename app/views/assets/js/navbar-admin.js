@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  document.addEventListener("click", function (event) {
+    const element = event.target;
+    if (
+      !element.classList.contains("top-bar__user-dropdown") &&
+      element.id !== "image-perfil"
+    ) {
+      dropdownMenu.classList.remove("show");
+    }
+  });
+
   function toggleActive(button) {
     sunButton.classList.remove("active");
     moonButton.classList.remove("active");
@@ -35,4 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
       dropdownMenuProduct.classList.toggle("active");
     });
   }
+
+  $(".link-logout").on("click", function () {
+    const url = this.getAttribute("data-url");
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¿Deseas cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Cerrar sesión",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = url;
+      }
+    });
+  });
 });
