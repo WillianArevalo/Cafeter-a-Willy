@@ -38,7 +38,7 @@ class LoginController
         $usuario = new Usuario($this->conn);
         $user = $usuario->search_user($username);
         if ($user) {
-            if ($user["clave"] == $clave) {
+            if (password_verify($clave, $user["clave"])) {
                 $_SESSION["user"] = $user;
                 $url = "";
                 if ($user["rol"] == "admin") {
@@ -53,5 +53,11 @@ class LoginController
         } else {
             echo json_encode(["title" => "Error", "status" => "error", "message" => "Usuario no encontrado"]);
         }
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header("Location: " . url("/inicio"));
     }
 }
